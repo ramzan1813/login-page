@@ -32,14 +32,14 @@ namespace login_page
 			this.label2 = new System.Windows.Forms.Label();
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
-			this.textBox1 = new System.Windows.Forms.TextBox();
-			this.textBox2 = new System.Windows.Forms.TextBox();
+			this.fullname = new System.Windows.Forms.TextBox();
+			this.password = new System.Windows.Forms.TextBox();
 			this.OK = new System.Windows.Forms.Button();
 			this.Cancel = new System.Windows.Forms.Button();
 			this.label5 = new System.Windows.Forms.Label();
-			this.button1 = new System.Windows.Forms.Button();
+			this.exit = new System.Windows.Forms.Button();
 			this.email = new System.Windows.Forms.TextBox();
-			this.phoneno = new System.Windows.Forms.TextBox();
+			this.phone = new System.Windows.Forms.TextBox();
 			this.Name = new System.Windows.Forms.Label();
 			this.SuspendLayout();
 			// 
@@ -73,24 +73,24 @@ namespace login_page
 			this.label4.TabIndex = 2;
 			this.label4.Text = "Phone No";
 			// 
-			// textBox1
+			// fullname
 			// 
-			this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-			this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-			this.textBox1.Location = new System.Drawing.Point(102, 56);
-			this.textBox1.Name = "textBox1";
-			this.textBox1.PlaceholderText = "Name";
-			this.textBox1.Size = new System.Drawing.Size(170, 23);
-			this.textBox1.TabIndex = 3;
+			this.fullname.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
+			this.fullname.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
+			this.fullname.Location = new System.Drawing.Point(102, 56);
+			this.fullname.Name = "fullname";
+			this.fullname.PlaceholderText = "Name";
+			this.fullname.Size = new System.Drawing.Size(170, 23);
+			this.fullname.TabIndex = 3;
 			// 
-			// textBox2
+			// password
 			// 
-			this.textBox2.Location = new System.Drawing.Point(386, 53);
-			this.textBox2.Name = "textBox2";
-			this.textBox2.PlaceholderText = "Password";
-			this.textBox2.Size = new System.Drawing.Size(159, 23);
-			this.textBox2.TabIndex = 3;
-			this.textBox2.UseSystemPasswordChar = true;
+			this.password.Location = new System.Drawing.Point(386, 53);
+			this.password.Name = "password";
+			this.password.PlaceholderText = "Password";
+			this.password.Size = new System.Drawing.Size(159, 23);
+			this.password.TabIndex = 3;
+			this.password.UseSystemPasswordChar = true;
 			// 
 			// OK
 			// 
@@ -134,40 +134,36 @@ namespace login_page
 			this.label5.Text = "Please use stronge password";
 			this.label5.Click += new System.EventHandler(this.label5_Click);
 			// 
-			// button1
+			// exit
 			// 
-			this.button1.AutoSize = true;
-			this.button1.Cursor = System.Windows.Forms.Cursors.Hand;
-			this.button1.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
-			this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-			this.button1.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-			this.button1.Location = new System.Drawing.Point(350, 222);
-			this.button1.Name = "button1";
-			this.button1.Size = new System.Drawing.Size(75, 37);
-			this.button1.TabIndex = 7;
-			this.button1.Text = "E&XIT";
-			this.button1.UseVisualStyleBackColor = true;
-			this.button1.Click += new System.EventHandler(this.Exit);
+			this.exit.AutoSize = true;
+			this.exit.Cursor = System.Windows.Forms.Cursors.Hand;
+			this.exit.FlatAppearance.CheckedBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(192)))), ((int)(((byte)(192)))));
+			this.exit.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
+			this.exit.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.exit.Location = new System.Drawing.Point(350, 222);
+			this.exit.Name = "exit";
+			this.exit.Size = new System.Drawing.Size(75, 37);
+			this.exit.TabIndex = 7;
+			this.exit.Text = "E&XIT";
+			this.exit.UseVisualStyleBackColor = true;
+			this.exit.Click += new System.EventHandler(this.Exit);
 			// 
 			// email
 			// 
-			this.email.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-			this.email.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
 			this.email.Location = new System.Drawing.Point(102, 119);
 			this.email.Name = "email";
 			this.email.PlaceholderText = "e-mail";
 			this.email.Size = new System.Drawing.Size(169, 23);
 			this.email.TabIndex = 8;
 			// 
-			// phoneno
+			// phone
 			// 
-			this.phoneno.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
-			this.phoneno.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.RecentlyUsedList;
-			this.phoneno.Location = new System.Drawing.Point(386, 119);
-			this.phoneno.Name = "phoneno";
-			this.phoneno.PlaceholderText = "03123456789";
-			this.phoneno.Size = new System.Drawing.Size(159, 23);
-			this.phoneno.TabIndex = 8;
+			this.phone.Location = new System.Drawing.Point(386, 119);
+			this.phone.Name = "phone";
+			this.phone.PlaceholderText = "0123456789";
+			this.phone.Size = new System.Drawing.Size(159, 23);
+			this.phone.TabIndex = 8;
 			// 
 			// Name
 			// 
@@ -186,17 +182,18 @@ namespace login_page
 			this.BackColor = System.Drawing.SystemColors.AppWorkspace;
 			this.ClientSize = new System.Drawing.Size(557, 333);
 			this.Controls.Add(this.Name);
-			this.Controls.Add(this.phoneno);
+			this.Controls.Add(this.phone);
 			this.Controls.Add(this.email);
-			this.Controls.Add(this.button1);
+			this.Controls.Add(this.exit);
 			this.Controls.Add(this.label5);
 			this.Controls.Add(this.Cancel);
 			this.Controls.Add(this.OK);
-			this.Controls.Add(this.textBox2);
-			this.Controls.Add(this.textBox1);
+			this.Controls.Add(this.password);
+			this.Controls.Add(this.fullname);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
+			//this.Name = "SignUp";
 			this.Text = "SignUp";
 			this.ResumeLayout(false);
 			this.PerformLayout();
@@ -207,14 +204,15 @@ namespace login_page
 		private System.Windows.Forms.Label label2;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox textBox1;
-		private System.Windows.Forms.TextBox textBox2;
+		private System.Windows.Forms.TextBox fullname;
+		private System.Windows.Forms.TextBox password;
 		private System.Windows.Forms.Button OK;
 		private System.Windows.Forms.Button Cancel;
 		private System.Windows.Forms.Label label5;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.TextBox email;
-		private System.Windows.Forms.TextBox phoneno;
+		private System.Windows.Forms.TextBox phone;
 		private new System.Windows.Forms.Label Name;
+		private System.Windows.Forms.Button exit;
 	}
 }

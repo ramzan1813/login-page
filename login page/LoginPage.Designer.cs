@@ -1,7 +1,7 @@
 ﻿
 namespace login_page
 {
-	partial class Form1
+	partial class LoginPage
 	{
 		/// <summary>
 		///  Required designer variable.
@@ -94,6 +94,7 @@ namespace login_page
 			// 
 			// textBox1
 			// 
+			this.textBox1.AcceptsTab = true;
 			this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.Suggest;
 			this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.HistoryList;
 			this.textBox1.Location = new System.Drawing.Point(427, 45);
@@ -147,7 +148,7 @@ namespace login_page
 			this.button3.UseVisualStyleBackColor = true;
 			this.button3.Click += new System.EventHandler(this.Exit);
 			// 
-			// Form1
+			// LoginPage
 			// 
 			this.AccessibleName = "";
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
@@ -162,7 +163,7 @@ namespace login_page
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.panel1);
-			this.Name = "Form1";
+			this.Name = "LoginPage";
 			this.Text = "Login ";
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
@@ -178,11 +179,11 @@ namespace login_page
 		private System.Windows.Forms.Label label1;
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
-		private System.Windows.Forms.TextBox textBox1;
 		private System.Windows.Forms.TextBox textBox2;
 		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.Button button2;
 		private System.Windows.Forms.Button button3;
+		public System.Windows.Forms.TextBox textBox1;
 	}
 }
 

@@ -1,21 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Text;
 using System.Windows.Forms;
 using System.Data.SqlClient;
 namespace login_page
 {
 	public partial class SignUp : Form
 	{
-		Form1 form1 = new Form1();
+		LoginPage form1 = new LoginPage();
 		public SignUp()
 		{
 			InitializeComponent();
 
 		}
+
+
+		// OK Button Section
+
+		#region
 
 		private void OK_Click(object sender, EventArgs e)
 		{
@@ -27,12 +27,14 @@ namespace login_page
 			//for inserting new user input data into database Login table 
 
 			sqlConnection.Open();
-			string Query = "INSERT INTO Login VALUES ('" + textBox1.Text + "','" + textBox2.Text + "','" + email.Text + "','" + phoneno.Text + "')";
+			string Query = "INSERT INTO Login VALUES ('" + fullname.Text + "','" + password.Text + "','" + email.Text + "','" + phone.Text + "')";
 
 			SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection);
 
+			// Executing Sql Commond
 			sqlCommand.ExecuteNonQuery();
 
+			// Closing Connection with Database 
 			sqlConnection.Close();
 
 			//for closig current open window 
@@ -41,6 +43,12 @@ namespace login_page
 			form1.Show();
 
 		}
+		#endregion
+
+
+		// Cancel Section 
+
+		#region
 
 		private void Cancel_Click(object sender, EventArgs e)
 		{
@@ -49,16 +57,25 @@ namespace login_page
 			//for opening Main login page again
 			form1.Show();
 		}
+		#endregion
 
+
+		// Label Section 
+
+		#region
 		private void label5_Click(object sender, EventArgs e)
 		{
 			MessageBox.Show("Please use Mixture of Words and Latters");
 		}
 
+		#endregion
 
+		// Exit Section
+		#region
 		private void Exit(object sender, EventArgs e)
 		{
 			Application.Exit();
 		}
+		#endregion
 	}
 }
