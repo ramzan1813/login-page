@@ -24,7 +24,7 @@ namespace login_page
 
 			this.Hide();
 
-			// Show SignUp Window and go on
+			// Show SignUp Window 
 			SignUp signUp = new SignUp();
 			signUp.Show();
 

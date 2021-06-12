@@ -25,7 +25,7 @@ namespace login_page
 
 
 			//database connection String
-			SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ramza\OneDrive\Documents\Data.mdf;Integrated Security=True;Connect Timeout=30");
+			SqlConnection sqlConnection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=LoginpageCmtbrch;Integrated Security=True;Pooling=False");
 
 			#region
 			//Updating Command 
@@ -117,7 +117,7 @@ namespace login_page
 			if (dialogResult == DialogResult.Yes)
 			{
 				//Creating connection With database
-				SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ramza\OneDrive\Documents\Data.mdf;Integrated Security=True;Connect Timeout=30");
+				SqlConnection sqlConnection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=LoginpageCmtbrch;Integrated Security=True;Pooling=False");
 
 
 				//Delete Command 

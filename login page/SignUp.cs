@@ -22,7 +22,7 @@ namespace login_page
 
 
 			// Local database connection String
-			SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ramza\OneDrive\Documents\Data.mdf;Integrated Security=True;Connect Timeout=30");
+			SqlConnection sqlConnection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=LoginpageCmtbrch;Integrated Security=True;Pooling=False");
 
 			//for inserting new user input data into database Login table 
 
