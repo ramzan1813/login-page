@@ -120,7 +120,7 @@ namespace login_page
 				SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ramza\OneDrive\Documents\Data.mdf;Integrated Security=True;Connect Timeout=30");
 
 
-				//Updating Command 
+				//Delete Command 
 
 				string Query = "Delete from Login  Where Email = '" + Email + "'";
 
@@ -138,7 +138,6 @@ namespace login_page
 
 					//MessageBox.Show(" Operation Secuess ");
 
-					// Display the order number.
 
 					MessageBox.Show("Profile of this User " + Email + " has been deleted");
 
