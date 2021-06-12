@@ -20,7 +20,8 @@ namespace login_page
 		private void SignUp(object sender, EventArgs e)
 		{
 
-			//Close Current Window
+			//Close Current form
+			
 			this.Hide();
 
 			// Show SignUp Window 
