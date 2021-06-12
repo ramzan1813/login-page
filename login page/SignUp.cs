@@ -21,13 +21,16 @@ namespace login_page
 		{
 
 
-			// Local database connection 
+			// Local database connection String
 			SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ramza\OneDrive\Documents\Data.mdf;Integrated Security=True;Connect Timeout=30");
 
 			//for inserting new user input data into database Login table 
 
-			sqlConnection.Open();
+			
 			string Query = "INSERT INTO Login VALUES ('" + fullname.Text + "','" + password.Text + "','" + email.Text + "','" + phone.Text + "')";
+			
+			//open connection
+			sqlConnection.Open();
 
 			SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection);
 

@@ -164,7 +164,7 @@ namespace login_page
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.panel1);
 			this.Name = "LoginPage";
-			this.Text = "Login ";
+			this.Text = "s";
 			this.panel1.ResumeLayout(false);
 			this.panel1.PerformLayout();
 			this.ResumeLayout(false);

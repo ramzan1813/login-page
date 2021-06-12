@@ -24,7 +24,7 @@ namespace login_page
 		{
 
 
-			//Creating connection With database
+			//database connection String
 			SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ramza\OneDrive\Documents\Data.mdf;Integrated Security=True;Connect Timeout=30");
 
 			#region
@@ -64,9 +64,7 @@ namespace login_page
 					// Run the stored procedure.
 					sqlCommand.ExecuteNonQuery();
 
-					//MessageBox.Show(" Operation Secuess ");
-
-					// Display the order number.
+					// Display Message if operation seuccesful.
 
 					MessageBox.Show("Profile of this User " + Email + " has been updated");
 				}
@@ -113,7 +111,7 @@ namespace login_page
 		private void btnDelete_Click(object sender, EventArgs e)
 		{
 
-
+			//Show Warning Message to User
 			DialogResult dialogResult = MessageBox.Show("Do You Want to delete Your Account ? ", "Delete Account ", MessageBoxButtons.YesNo);
 
 			if (dialogResult == DialogResult.Yes)
