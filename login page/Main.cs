@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Data;
 using System.Data.SqlClient;
 using System.Windows.Forms;
 
@@ -13,9 +14,11 @@ namespace login_page
 		public Main(String EmailTextBox)
 		{
 			InitializeComponent();
+			//here we receiving email of user for LoginPage Where he enter for login
 			Email = EmailTextBox;
 
 		}
+
 
 		// Update Section 
 
@@ -25,9 +28,8 @@ namespace login_page
 
 
 			//database connection String
-			SqlConnection sqlConnection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=LoginpageCmtbrch;Integrated Security=True;Pooling=False");
-
-			#region
+			SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\LoginPage New Branch\Database\LoginDataBase.mdf;Integrated Security=True;Connect Timeout=30");
+			
 			//Updating Command 
 			string Query = "";
 
@@ -39,8 +41,6 @@ namespace login_page
 			{
 				Query = "Update Login set UserName = '" + name.Text + "', Password ='" + password.Text + "',  PhoneNo = '" + phoneno.Text + "' Where Email = '" + Email + "'";
 			}
-			#endregion
-
 
 			//Runing Query
 			SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection);
@@ -117,7 +117,7 @@ namespace login_page
 			if (dialogResult == DialogResult.Yes)
 			{
 				//Creating connection With database
-				SqlConnection sqlConnection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=LoginpageCmtbrch;Integrated Security=True;Pooling=False");
+				SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\LoginPage New Branch\Database\LoginDataBase.mdf;Integrated Security=True;Connect Timeout=30");
 
 
 				//Delete Command 
@@ -158,6 +158,56 @@ namespace login_page
 
 
 		}
+		#endregion
+
+		//Data Show
+
+		#region
+
+		private void BtnShowData_Click(object sender, EventArgs e)
+		{
+			SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\LoginPage New Branch\Database\LoginDataBase.mdf;Integrated Security=True;Connect Timeout=30");
+
+			string Quary = "select * from login ";
+
+			try
+			{
+				SqlDataAdapter sqlDataAdapter = new SqlDataAdapter(Quary, sqlConnection);
+
+
+				//SqlCommand sqlCommand = new SqlCommand(Quary, sqlConnection);
+
+				//sqlConnection.Open();
+
+				//SqlDataReader sqlDataReader =new SqlDataReader();
+
+				DataGridView dataGridView = new DataGridView();
+
+					//MessageBox.Show("if is now run ");
+
+					DataTable dataTable = new DataTable();
+
+					DataSet dataSet = new DataSet();
+
+					sqlDataAdapter.Fill(dataTable);
+					sqlDataAdapter.Fill(dataSet ,"Login");
+
+				//dataTable.Load(sqlDataReader);
+
+				//this.dataGridView1.DataSource = dataSet.Tables[0];
+
+				//dataGridView.DataSource = dataTable;
+
+				dataGridView.DataSource = dataSet.Tables["Login"].DefaultView;
+			}
+			finally
+			{
+				sqlConnection.Close();
+			}
+
+
+		}
+
 		#endregion
 	}
 }

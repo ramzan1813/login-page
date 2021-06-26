@@ -37,8 +37,8 @@ namespace login_page
 		#region
 		private void SingIn(object sender, EventArgs e)
 		{
-			//Creating connection With database
-			SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=C:\Users\ramza\OneDrive\Documents\Data.mdf;Integrated Security=True;Connect Timeout=30");
+			//Creating connection With database string="Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename="E:\LoginPage New Branch\Database\LoginDataBase.mdf";Integrated Security=True;Connect Timeout=30"
+			SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\LoginPage New Branch\Database\LoginDataBase.mdf;Integrated Security=True;Connect Timeout=30");
 
 			// Checking Email and Password Validation 
 			SqlDataAdapter sqlDataAdapter = new SqlDataAdapter("Select *From Login Where email ='" + textBox1.Text + "' and Password = '" + textBox2.Text + "' ", connection);
@@ -52,7 +52,7 @@ namespace login_page
 				//Close Current Window
 				this.Hide();
 
-				// Show Main Window
+				// Show Main Window and sending Email to the Main Form to trace data form database for update and delete 
 				Main main = new Main(textBox1.Text);
 				main.Show();
 			}

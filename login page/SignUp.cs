@@ -20,30 +20,68 @@ namespace login_page
 		private void OK_Click(object sender, EventArgs e)
 		{
 
+			if(this.Name.Text=="" )
+			{
+				MessageBox.Show("Please Enter Full Name ");
 
-			// Local database connection String
-			SqlConnection sqlConnection = new SqlConnection(@"Data Source=(localdb)\MSSQLLocalDB;Initial Catalog=LoginpageCmtbrch;Integrated Security=True;Pooling=False");
+			}
+			else if (this.email.Text=="")
+			{
+				MessageBox.Show("Please Enter Email");
+			}
+			else if(this.password.Text=="")
+			{
+				MessageBox.Show("Please Enter Password ");
+			}
+			else if(this.phone.Text=="")
+			{
+				MessageBox.Show("Please Enter Phone Number ");
+			}
+			else
+			{
+				// Local database connection String
 
-			//for inserting new user input data into database Login table 
+				SqlConnection sqlConnection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;AttachDbFilename=E:\LoginPage New Branch\Database\LoginDataBase.mdf;Integrated Security=True;Connect Timeout=30");
 
-			
-			string Query = "INSERT INTO Login VALUES ('" + fullname.Text + "','" + password.Text + "','" + email.Text + "','" + phone.Text + "')";
-			
-			//open connection
-			sqlConnection.Open();
+				try
+				{
+					
+					//for inserting new user input data into database Login table 
 
-			SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection);
+					string Query = "INSERT INTO Login VALUES ('" + fullname.Text + "','" + password.Text + "','" + email.Text + "','" + phone.Text + "')";
 
-			// Executing Sql Commond
-			sqlCommand.ExecuteNonQuery();
+					//open connection
 
-			// Closing Connection with Database 
-			sqlConnection.Close();
+					sqlConnection.Open();
 
-			//for closig current open window 
-			this.Close();
-			//for opening Main login page again
-			form1.Show();
+					SqlCommand sqlCommand = new SqlCommand(Query, sqlConnection);
+
+					// Executing Sql Commond
+
+					sqlCommand.ExecuteNonQuery();
+
+				}
+				catch
+				{
+					MessageBox.Show("User Cannot SignUp This Time Please Try \n again Later ");
+				}
+				finally
+				{
+					// Closing Connection with Database 
+
+					sqlConnection.Close();
+
+					//for closig current open window 
+
+					this.Close();
+
+					//for opening Main login page again
+
+					form1.Show();
+
+				}
+
+			}
 
 		}
 		#endregion

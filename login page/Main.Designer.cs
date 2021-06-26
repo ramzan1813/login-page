@@ -40,6 +40,9 @@ namespace login_page
 			this.label3 = new System.Windows.Forms.Label();
 			this.label4 = new System.Windows.Forms.Label();
 			this.btnDelete = new System.Windows.Forms.Button();
+			this.dataGridView1 = new System.Windows.Forms.DataGridView();
+			this.BtnShowData = new System.Windows.Forms.Button();
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
 			this.SuspendLayout();
 			// 
 			// label1
@@ -86,7 +89,7 @@ namespace login_page
 			// 
 			// phoneno
 			// 
-			this.phoneno.Location = new System.Drawing.Point(352, 197);
+			this.phoneno.Location = new System.Drawing.Point(228, 202);
 			this.phoneno.Name = "phoneno";
 			this.phoneno.PlaceholderText = "0123456789";
 			this.phoneno.Size = new System.Drawing.Size(202, 23);
@@ -94,7 +97,7 @@ namespace login_page
 			// 
 			// password
 			// 
-			this.password.Location = new System.Drawing.Point(352, 168);
+			this.password.Location = new System.Drawing.Point(228, 173);
 			this.password.Name = "password";
 			this.password.PlaceholderText = "Password";
 			this.password.Size = new System.Drawing.Size(202, 23);
@@ -102,7 +105,7 @@ namespace login_page
 			// 
 			// name
 			// 
-			this.name.Location = new System.Drawing.Point(352, 139);
+			this.name.Location = new System.Drawing.Point(228, 144);
 			this.name.Name = "name";
 			this.name.PlaceholderText = "Name";
 			this.name.Size = new System.Drawing.Size(202, 23);
@@ -112,7 +115,7 @@ namespace login_page
 			// 
 			this.label2.AutoSize = true;
 			this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label2.Location = new System.Drawing.Point(241, 140);
+			this.label2.Location = new System.Drawing.Point(117, 145);
 			this.label2.Name = "label2";
 			this.label2.Size = new System.Drawing.Size(58, 22);
 			this.label2.TabIndex = 5;
@@ -122,7 +125,7 @@ namespace login_page
 			// 
 			this.label3.AutoSize = true;
 			this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label3.Location = new System.Drawing.Point(241, 168);
+			this.label3.Location = new System.Drawing.Point(117, 173);
 			this.label3.Name = "label3";
 			this.label3.Size = new System.Drawing.Size(90, 22);
 			this.label3.TabIndex = 5;
@@ -132,7 +135,7 @@ namespace login_page
 			// 
 			this.label4.AutoSize = true;
 			this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-			this.label4.Location = new System.Drawing.Point(241, 197);
+			this.label4.Location = new System.Drawing.Point(117, 202);
 			this.label4.Name = "label4";
 			this.label4.Size = new System.Drawing.Size(90, 22);
 			this.label4.TabIndex = 5;
@@ -149,12 +152,36 @@ namespace login_page
 			this.btnDelete.UseVisualStyleBackColor = true;
 			this.btnDelete.Click += new System.EventHandler(this.btnDelete_Click);
 			// 
+			// dataGridView1
+			// 
+			this.dataGridView1.AllowUserToAddRows = false;
+			this.dataGridView1.AllowUserToDeleteRows = false;
+			this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+			this.dataGridView1.Location = new System.Drawing.Point(470, 144);
+			this.dataGridView1.Name = "dataGridView1";
+			this.dataGridView1.ReadOnly = true;
+			this.dataGridView1.RowTemplate.Height = 25;
+			this.dataGridView1.Size = new System.Drawing.Size(240, 150);
+			this.dataGridView1.TabIndex = 6;
+			// 
+			// BtnShowData
+			// 
+			this.BtnShowData.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+			this.BtnShowData.Location = new System.Drawing.Point(117, 311);
+			this.BtnShowData.Name = "BtnShowData";
+			this.BtnShowData.Size = new System.Drawing.Size(90, 41);
+			this.BtnShowData.TabIndex = 2;
+			this.BtnShowData.Text = "Show Data ";
+			this.BtnShowData.UseVisualStyleBackColor = true;
+			this.BtnShowData.Click += new System.EventHandler(this.BtnShowData_Click);
+			// 
 			// Main
 			// 
 			this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
 			this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
 			this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(128)))));
 			this.ClientSize = new System.Drawing.Size(800, 450);
+			this.Controls.Add(this.dataGridView1);
 			this.Controls.Add(this.label4);
 			this.Controls.Add(this.label3);
 			this.Controls.Add(this.label2);
@@ -162,12 +189,16 @@ namespace login_page
 			this.Controls.Add(this.password);
 			this.Controls.Add(this.phoneno);
 			this.Controls.Add(this.Updates);
+			this.Controls.Add(this.BtnShowData);
 			this.Controls.Add(this.Back);
 			this.Controls.Add(this.btnDelete);
 			this.Controls.Add(this.Exit);
 			this.Controls.Add(this.label1);
+			this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
+			this.HelpButton = true;
 			this.Name = "Main";
 			this.Text = "Main";
+			((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
 			this.ResumeLayout(false);
 			this.PerformLayout();
 
@@ -186,5 +217,7 @@ namespace login_page
 		private System.Windows.Forms.Label label3;
 		private System.Windows.Forms.Label label4;
 		private System.Windows.Forms.Button btnDelete;
+		private System.Windows.Forms.DataGridView dataGridView1;
+		private System.Windows.Forms.Button BtnShowData;
 	}
 }

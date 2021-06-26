@@ -153,7 +153,7 @@ namespace login_page
 			// 
 			this.email.Location = new System.Drawing.Point(102, 119);
 			this.email.Name = "email";
-			this.email.PlaceholderText = "e-mail";
+			this.email.PlaceholderText = "E-mail";
 			this.email.Size = new System.Drawing.Size(169, 23);
 			this.email.TabIndex = 8;
 			// 
@@ -209,7 +209,6 @@ namespace login_page
 		private System.Windows.Forms.Button OK;
 		private System.Windows.Forms.Button Cancel;
 		private System.Windows.Forms.Label label5;
-		private System.Windows.Forms.Button button1;
 		private System.Windows.Forms.TextBox email;
 		private System.Windows.Forms.TextBox phone;
 		private new System.Windows.Forms.Label Name;
